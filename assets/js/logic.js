@@ -8,3 +8,15 @@ var config = {
   };
 
   firebase.initializeApp(config);
+
+  $('#comment-form').on('click', function() {
+    var name = $('#name').val();
+    var comment = $('#comment').val();
+  
+  
+    var comment = {
+      name: name,
+      comment: comment,
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
+  
+    };
