@@ -1,0 +1,10 @@
+body{
+    overflow: visible;
+    margin: 0;
+    padding: 0;
+    /*background-position: right top;
+    background-repeat: repeat;*/    
+    background-image: url("../../images/cherry1.jpg");
+    background-repeat: repeat;
+    background-position: right top;
+ }
