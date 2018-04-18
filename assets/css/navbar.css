@@ -1,14 +1,4 @@
-body{
-    overflow: visible;
-    margin: 0;
-    padding: 0;
-    /*background-position: right top;
-    background-repeat: repeat;*/    
-    background-image: url("../../images/cherry1.jpg");
-    background-size: cover;
-}
-
-   .navbar {
+.navbar {
   background-color: #faf6f6;
 }
 .navbar .navbar-brand {
@@ -37,32 +27,51 @@ body{
 .navbar .navbar-nav .nav-link:not(.disabled):focus {
   color: #010101;
 }
+/* 
+.navbar .navbar-nav .nav-link:not(.disabled):hover,
+.navbar .navbar-nav .nav-link:not(.disabled):focus {
+color: #010101;
+}
 .navbar .navbar-nav .nav-item.active .nav-link,
 .navbar .navbar-nav .nav-item.active .nav-link:hover,
 .navbar .navbar-nav .nav-item.active .nav-link:focus,
 .navbar .navbar-nav .nav-item.show .nav-link,
 .navbar .navbar-nav .nav-item.show .nav-link:hover,
 .navbar .navbar-nav .nav-item.show .nav-link:focus {
-  color: #010101;
-  background-color: #f35858;
-}
+color: #010101;
+background-color: #f35858;
+} */
+
+
+
+/* 
 .navbar .navbar-toggle {
-  border-color:black;
+border-color: #f35858;
 }
+
+
 .navbar .navbar-toggle:hover,
 .navbar .navbar-toggle:focus {
-  background-color: black;
+background-color: #f35858;
 }
+
+
 .navbar .navbar-toggle .navbar-toggler-icon {
-  color:black;
+color: #f35858;
 }
+ */
+
+
+
 .navbar .navbar-collapse,
 .navbar .navbar-form {
-  border-color: #f35858;
+border-color: #f35858;
 }
 .navbar .navbar-link {
-  color: #f35858;
+color: #f35858;
 }
 .navbar .navbar-link:hover {
-  color: #010101;
+color: #010101;
 }
+
+

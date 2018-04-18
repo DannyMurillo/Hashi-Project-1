@@ -3,241 +3,48 @@
 
 <head>
 
-    <title>Hashi</title>
+    <title>Location</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <style>
 
-body{
-    overflow: visible;
-    margin: 0;
-    padding: 0;
-    /*background-position: right top;
-    background-repeat: repeat;*/    
-    background-image: url("images/daichan1.jpg");
-}
-
-    .navbar {
-  background-color: #faf6f6;
-}
-.navbar .navbar-brand {
-  color: #f35858;
-}
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus {
-  color: #010101;
-}
-.navbar .navbar-text {
-  color: #f35858;
-}
-.navbar .navbar-text a {
-  color: #010101;
-}
-.navbar .navbar-text a:hover,
-.navbar .navbar-text a:focus {
-  color: #010101; 
-}
-.navbar .navbar-nav .nav-link {
-  color: #f35858;
-  border-radius: .25rem;
-  margin: 0 0.25em;
-}
-.navbar .navbar-nav .nav-link:not(.disabled):hover,
-.navbar .navbar-nav .nav-link:not(.disabled):focus {
-  color: #010101;
-}
-.navbar .navbar-nav .nav-item.active .nav-link,
-.navbar .navbar-nav .nav-item.active .nav-link:hover,
-.navbar .navbar-nav .nav-item.active .nav-link:focus,
-.navbar .navbar-nav .nav-item.show .nav-link,
-.navbar .navbar-nav .nav-item.show .nav-link:hover,
-.navbar .navbar-nav .nav-item.show .nav-link:focus {
-  color: #010101;
-  background-color: #f35858;
-}
-.navbar .navbar-toggle {
-  border-color: #f35858;
-}
-.navbar .navbar-toggle:hover,
-.navbar .navbar-toggle:focus {
-  background-color: #f35858;
-}
-.navbar .navbar-toggle .navbar-toggler-icon {
-  color: #f35858;
-}
-.navbar .navbar-collapse,
-.navbar .navbar-form {
-  border-color: #f35858;
-}
-.navbar .navbar-link {
-  color: #f35858;
-}
-.navbar .navbar-link:hover {
-  color: #010101;
-}
-
-@media (max-width: 575px) {
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #f35858;
-  }
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #010101;
-  }
-  .navbar-expand-sm .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #010101;
-    background-color: #f35858;
-  }
-}
-
-@media (max-width: 767px) {
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #f35858;
-  }
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #010101;
-  }
-  .navbar-expand-md .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #010101;
-    background-color: #f35858;
-  }
-}
-
-@media (max-width: 991px) {
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #f35858;
-  }
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #010101;
-  }
-  .navbar-expand-lg .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #010101;
-    background-color: #f35858;
-  }
-}
-
-@media (max-width: 1199px) {
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item {
-    color: #f35858;
-  }
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-    color: #010101;
-  }
-  .navbar-expand-xl .navbar-nav .show .dropdown-menu .dropdown-item.active {
-    color: #010101;
-    background-color: #f35858;
-  }
-}
-
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item {
-  color: #f35858;
-}
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:hover,
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item:focus {
-  color: #010101;
-}
-.navbar-expand .navbar-nav .show .dropdown-menu .dropdown-item.active {
-  color: #010101;
-  background-color: #f35858;
-}
-
-#hours {
-  display:block;
-  background-color:#faf6f6; 
-}
-
-
-    </style>
-
-<script>
-
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 34.140196, lng: -118.375725},
-        zoom: 15
-      });
-
-      var infowindow = new google.maps.InfoWindow();
-      var service = new google.maps.places.PlacesService(map);
-
-      service.getDetails({
-        placeId: 'ChIJj77jhhO-woARyE3GYmx0bFE'
-      }, function(place, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          var marker = new google.maps.Marker({
-            map: map,
-            position: place.geometry.location
-          });
-          google.maps.event.addListener(marker, 'click', function() {
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
-              'Phone Number: ' + place.formatted_phone_number + '<br>'+
-              'Goople Places Rating ' + place.rating + '<br>' +
-              place.formatted_address + '</div>');
-            infowindow.open(map, this);
-          });
-        }
-      });
-    }
-  </script>
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/navbar.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
 </head>
 
 <body>
     <!--Navegation Bar-->
-    <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Daichan</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html" id="index">Welcome</a>
-                    </li>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo1faf6f6s.png">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" id="index">Welcome</a>
+                </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="aboutus.html" id="about-us">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="menu.html" id="menu">Menu</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contactus.html" id="contact-us">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="location.html" id="location">Location</a>
-                    </li>
-                </ul>
-            </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="aboutus.html" id="about-us">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="menu.html" id="menu">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contactus.html" id="contact-us">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="location.html" id="location">Location</a>
+                </li>
+            </ul>
         </div>
     </nav>
-  
-    <div class ="container">
-        <div class = "row">
-          <div class = "col-1"></div>
-          <div class = "col-5" id = "hours">
-            <h2>Diachan Hours</h2>
-            <p>Monday             11:30AM-3PM, 5:30-9PM</p>
-            <p>Tuesday            11:30AM-3PM, 5:30-9PM</p>
-            <p>Wednesday          11:30AM-3PM, 5:30-9PM</p>
-            <p>Thursday           11:30AM-3PM, 5:30-9PM</p>
-            <p>Friday             11:30AM-3PM, 5:30-9PM</p>
-            <p>Saturday           12-3PM, 5-9PM</p> 
-            <b>Sunday             CLOSED</b> <br>
-          </div>
-          <div class = "col-5" id = "map" ></div>
-          <div class = "col-1"></div>
-    </div>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJYfO25-ti-9JTfBZRIQ9gHkJJVuKMX44&libraries=places&callback=initMap">
-    </script>
+
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
