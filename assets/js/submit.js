@@ -1,4 +1,6 @@
-var config = {
+$(document).ready(function()
+{
+  var config = {
     apiKey: "AIzaSyCYlHy09JFeEnK5T77FSHR6pZnWoi6ow_Q",
     authDomain: "daichan-4b27d.firebaseapp.com",
     databaseURL: "https://daichan-4b27d.firebaseio.com",
@@ -9,7 +11,9 @@ var config = {
 
   firebase.initializeApp(config);
 
+
   $('#comment-button').on('click', function() {
+   event.preventDefault();
     var name = $('#name').val();
     var email = $('#email').val();
     var phoneNumber = $('#phoneNumber').val();
@@ -36,4 +40,4 @@ var config = {
     
     // Create a variable to reference the database.
     var daichanDb = firebase.database();
-    
+  });
