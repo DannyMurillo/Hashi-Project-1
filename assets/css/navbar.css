@@ -27,7 +27,7 @@
 .navbar .navbar-nav .nav-link:not(.disabled):focus {
   color: #010101;
 }
-/* 
+
 .navbar .navbar-nav .nav-link:not(.disabled):hover,
 .navbar .navbar-nav .nav-link:not(.disabled):focus {
 color: #010101;
@@ -40,11 +40,7 @@ color: #010101;
 .navbar .navbar-nav .nav-item.show .nav-link:focus {
 color: #010101;
 background-color: #f35858;
-} */
-
-
-
-/* 
+} 
 .navbar .navbar-toggle {
 border-color: #f35858;
 }
@@ -59,7 +55,7 @@ background-color: #f35858;
 .navbar .navbar-toggle .navbar-toggler-icon {
 color: #f35858;
 }
- */
+
 
 
 
