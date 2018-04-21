@@ -9,6 +9,14 @@
     background-position: right top; 
  } */
 
+.jumbotron{
+  background-color: rgba(255, 255, 255, .75);
+   text-align:center;  
+   overflow: hidden
+}
+
+
+
  #map {
     height:50%;
     width: 100%;
